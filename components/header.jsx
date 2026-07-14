@@ -1,19 +1,44 @@
-import { SignInButton, UserButton, SignUpButton, Show } from "@clerk/nextjs";
+import { Button } from "@base-ui/react";
+import { SignInButton, UserButton, SignUpButton, Show, SignedIn } from "@clerk/nextjs";
+import { LayoutDashboard } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <div>
+    <div className="fixed top-0 w-full bg-black/80 backdrop-blur-md z-50 border-b" >
+
+      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <Link href="/">
+          <Image src={"/logo.png"} alt="ledgerx logo" height={60} width={200} 
+           className="h-12 w-auto object-contain"/>
+        </Link>
+      
+
+         <div>        
+         <Show when="signed-in">
+          <Link href={"/dashboard"}>
+            <Button variant="outline">
+             <LayoutDashboard size={18} /> 
+             <span className="hidden md:inline">Dashboard</span> 
+            </Button>
+          </Link>
+        </Show>
+        </div>
+
+
+       <div> 
        <Show when="signed-out">
-              <SignInButton />
-              <SignUpButton>
-                <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
-                  Sign Up
-                </button>
-              </SignUpButton>
-            </Show>
-            <Show when="signed-in">
-              <UserButton />
-            </Show>
+              <SignInButton forceRedirectUrl="/dashboard">
+                <Button variant="outline">Login</Button>
+              </SignInButton>
+        </Show>
+        </div>
+
+        
+
+        
+      </nav>
     </div>
   )
 }

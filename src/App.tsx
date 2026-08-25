@@ -1,18 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+
 import './App.css'
+import SplitText from "@/components/SplitText";
 
 function App() {
-
   return (
-    <>
-      <div>
-        <p>Hello, nigga!</p>
-      </div>
-    </>
-  )
+    <div className="min-h-screen flex items-center justify-center">
+      <SplitText
+        text="coming soon..."
+        className="text-8xl font-bold text-center"
+        delay={50}
+        duration={1.25}
+        ease="power3.out"
+        splitType="chars"
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;

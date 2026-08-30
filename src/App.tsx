@@ -1,18 +1,10 @@
-
-import './App.css'
-import SplitText from "@/components/SplitText";
+import "./App.css";
+import Login from "./pages/LoginPage";
 
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <SplitText
-        text="coming soon..."
-        className="text-8xl font-bold text-center"
-        delay={50}
-        duration={1.25}
-        ease="power3.out"
-        splitType="chars"
-      />
+    <div>
+      <Login />
     </div>
   );
 }

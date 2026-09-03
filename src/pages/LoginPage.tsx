@@ -177,7 +177,7 @@ export default function LoginPage() {
                 onBlur={() => setFocused(null)}
                 required
                 style={{ paddingRight: "28px" }}
-              />
+              /> 
               <button
                 type="button"
                 className="eye-btn"
